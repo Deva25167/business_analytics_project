@@ -7,5 +7,5 @@ if __name__ == "__main__":
     cleaner = DataCleaner(input_path)
     cleaned_df = cleaner.clean(output_path)
 
-    print("\n🔎 Cleaned Data Preview:")
+    print("\n  Cleaned Data Preview:")
     print(cleaned_df.head())
