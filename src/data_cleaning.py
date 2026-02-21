@@ -12,12 +12,12 @@ class DataCleaner:
         # Clean column names (remove spaces)
         self.df.columns = self.df.columns.str.strip()
 
-        print("✅ Data loaded successfully")
+        print(" Data loaded successfully")
         print("Columns:", self.df.columns.tolist())
 
     def remove_duplicates(self):
         self.df.drop_duplicates(inplace=True)
-        print("✅ Duplicates removed")
+        print(" Duplicates removed")
 
     def handle_missing_values(self):
         # Fill numeric columns
@@ -31,13 +31,13 @@ class DataCleaner:
             else:
                 self.df[col].fillna("Unknown", inplace=True)
 
-        print("✅ Missing values handled")
+        print(" Missing values handled")
 
     def fix_data_types(self):
         if 'Date' in self.df.columns:
             self.df['Date'] = pd.to_datetime(self.df['Date'], errors='coerce')
 
-        print("✅ Data types fixed")
+        print(" Data types fixed")
 
     def create_new_columns(self):
 
@@ -61,11 +61,11 @@ class DataCleaner:
                 labels=['Teen', 'Young Adult', 'Adult', 'Senior', 'Old']
             )
 
-        print("✅ New columns created")
+        print(" New columns created")
 
     def save_cleaned_data(self, output_path):
         self.df.to_csv(output_path, index=False)
-        print("✅ Cleaned data saved successfully")
+        print(" Cleaned data saved successfully")
 
     def clean(self, output_path):
         self.load_data()
