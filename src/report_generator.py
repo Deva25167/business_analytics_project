@@ -5,7 +5,7 @@ from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import A4
 
-# 1️⃣ Load Dataset
+# 1️ Load Dataset
 df = pd.read_csv("data/retail_sales_dataset.csv")
 
 # Clean column names
@@ -83,4 +83,4 @@ if 'Product Category' in df.columns:
 
 doc.build(elements)
 
-print("✅ Report Generated Successfully: Retail_Sales_Report.pdf")
+print(" Report Generated Successfully: Retail_Sales_Report.pdf")
