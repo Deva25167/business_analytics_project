@@ -14,7 +14,7 @@ print("Dataset Shape:", df.shape)
 print("\nColumns:\n", df.columns)
 print("\nFirst 5 Rows:\n", df.head())
 
-# ------------------------------------------
+# -----------------------------------------
 # 4️ Total Revenue
 # ------------------------------------------
 total_revenue = df['Revenue'].sum()
@@ -73,4 +73,4 @@ print("\nTop 5 Customers:\n", top_customers)
 average_purchase = df['Revenue'].mean()
 print("\nAverage Purchase Value:", average_purchase)
 
-print("\nAnalysis Completed Successfully 🚀")
+print("\nAnalysis Completed Successfully ")
