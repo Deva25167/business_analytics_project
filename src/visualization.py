@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# 1️⃣ Load Dataset
+# 1️ Load Dataset
 df = pd.read_csv("data/retail_sales_dataset.csv")
 
 # Clean column names
@@ -17,7 +17,7 @@ if 'Revenue' not in df.columns:
         df['Revenue'] = df['Quantity'] * df['Price per Unit']
 
 # ----------------------------------
-# 1️⃣ Monthly Revenue Trend
+# 1️ Monthly Revenue Trend
 # ----------------------------------
 if 'Date' in df.columns:
     df['Month'] = df['Date'].dt.to_period('M')
@@ -33,7 +33,7 @@ if 'Date' in df.columns:
     plt.show()
 
 # ----------------------------------
-# 2️⃣ Category Wise Revenue
+# 2️ Category Wise Revenue
 # ----------------------------------
 if 'Product Category' in df.columns:
     category_revenue = df.groupby('Product Category')['Revenue'].sum()
@@ -47,7 +47,7 @@ if 'Product Category' in df.columns:
     plt.show()
 
 # ----------------------------------
-# 3️⃣ Gender Wise Revenue
+# 3️ Gender Wise Revenue
 # ----------------------------------
 if 'Gender' in df.columns:
     gender_revenue = df.groupby('Gender')['Revenue'].sum()
@@ -61,7 +61,7 @@ if 'Gender' in df.columns:
     plt.show()
 
 # ----------------------------------
-# 4️⃣ Age Distribution
+# 4️ Age Distribution
 # ----------------------------------
 if 'Age' in df.columns:
     plt.figure()
@@ -73,7 +73,7 @@ if 'Age' in df.columns:
     plt.show()
 
 # ----------------------------------
-# 5️⃣ Top 5 Customers by Revenue
+# 5️ Top 5 Customers by Revenue
 # ----------------------------------
 if 'Customer ID' in df.columns:
     top_customers = df.groupby('Customer ID')['Revenue'].sum().sort_values(ascending=False).head(5)
